@@ -1,0 +1,44 @@
+<body>
+<div style="text-align:center">
+<h1>Formulario para cargar productos</h1>
+</div>
+<div style="text-align:center">
+<form id="form">
+    <div>
+    <label>Nombre</label>
+    <input name="name">
+    <label>Precio</label>
+    <input name="price">
+    <label>Imagen</label>
+    <input name="img">
+    <button id="button" type="submit">Enviar</button>
+    </div>
+</form>
+<div id="faltantes"></div>
+</div>
+<div id="historial">
+</div>
+
+<div>
+    <div style="text-align:center">
+    <h1>Mensajes</h1>
+    </div>
+
+    <div style="text-align:center; margin-top:30px">
+    <label>Email</label>
+    <input id="email" name="email">
+    </div>
+    <div style="text-align:center; margin-top:30px">
+    <form  id='chatBox'  >
+        <label>Mensaje</label>
+        <input name="message">
+        <button id="buttonChat" type="submit">Enviar</button>
+        <div id="emptyChatFields"></div>
+    </form>
+    </div>
+    <div id="messageEvaluator"></div>
+    <div id="history"></div>
+</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index.js"></script>
+</body>
