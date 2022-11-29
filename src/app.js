@@ -26,7 +26,7 @@ app.get('/', (req, res)=>{
 
 io.on('connection', socket => {
     
-    console.log('Socket')
+    console.log('Socket connected')
 
     //cuando recibo un paquete llamado product, lo pusheo al array de products
     //devuelvo el array en un paquete llamado products
@@ -56,7 +56,7 @@ io.on('connection', socket => {
 })
 
 
-/* Agregamos el historial de chat a un archivo messages.txt */
+// función para escribir el historial de mensajes en archivo txt
 
 const writeMessageFile = (messages, file) => {
 
@@ -76,6 +76,8 @@ const writeMessageFile = (messages, file) => {
 
     }
 }
+
+//función para leer el historial de mensajes de archivo txt
 
 const readExistingMessages = (file) => {
     try {

@@ -22,7 +22,7 @@ const onProductSubmit = (e, form) => {
 
     } else {
 
-        document.getElementById('faltantes').innerHTML= `<p style="text-align:center; margin-top:30px">Error al insertar producto</p>`
+        document.getElementById('faltantes').innerHTML= `<p style="text-align:center; margin-top:30px; color:beige; background-color: brown" >Error al insertar producto, falta algún dato mandatorio</p>`
 
     }
 
@@ -57,18 +57,18 @@ const tablaProductos = (products) =>{
         <div style='text-align:center;'>
             <table style="text-align:center; margin-left:0px; margin-right:0px; margin-top:40px" width='100%' cellspacing='0', cellpadding='0', border='0', bgcolor='#F2F2F2'>
                 <tr>
-                    <th style="width:33%">Nombre</th>
-                    <th style="width:33%">Precio</th>
-                    <th style="width:33%">Imagen</th>
+                    <th style="width:33%; color:blue">Nombre</th>
+                    <th style="width:33%; color:blue">Precio</th>
+                    <th style="width:33%; color:blue">Imagen</th>
                 </tr>
         `
        products.forEach((item)=>{
         toRender2 +=
         `
                 <tr>
-                    <td><p style="text-align:center">${item.name}</p></td>
-                    <td><p style="text-align:center">$${item.price}</p></td>
-                    <td><p style="text-align:center"><img src="${item.img}" alt="${item.img}" style='width:40%'></p></td>
+                    <td><p style="text-align:center; font-weight:bold">${item.name}</p></td>
+                    <td><p style="text-align:center; font-weight:bold">$${item.price}</p></td>
+                    <td><p style="text-align:center; font-weight:bold"><img src="${item.img}" alt="${item.img}" style='width:40%'></p></td>
                 </tr>
         `
         })
@@ -81,7 +81,7 @@ const tablaProductos = (products) =>{
 
         toRender = toRender1 + toRender2 + toRender3
     }
-    else toRender = `<p style="text-align:center; margin-top:30px">No hay productos para mostrar</p>`
+    else toRender = `<p style="text-align:center; margin-top:30px; color:beige; background-color:blue"  >No hay productos para mostrar</p>`
 
     return toRender
 }
@@ -105,10 +105,10 @@ const onMessageSubmit = (e) => {
 
         socket.emit('chat', chat)
 
-        document.getElementById('emptyChatFields').innerHTML = ``
+        document.getElementById('faltantesChat').innerHTML = ``
     }
     else {
-    document.getElementById('emptyChatFields').innerHTML = `<p>Hay campos sin completar</p>`
+    document.getElementById('faltantesChat').innerHTML = `<p style="text-align:center; margin-top:30px; color:beige; background-color: brown" >El mensaje no pudo ser enviado, hay campos sin completar</p>`
     }
    
 }
